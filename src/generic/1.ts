@@ -16,14 +16,16 @@
 
 // export { };
   
-const promise: Promise<string> = new Promise<string>((resolve) => {
-  setInterval(() => {
-    resolve('Done!');
-  }, 1000);
+
+function getPromise():Promise<(string | number)[]> {
+  return new Promise((resolve) => {
+    resolve(['Text', 50]);
+  });
+}
+
+getPromise()
+.then((data) => {
+  console.log(data);
 });
 
-promise.then((data) => {
-  console.log(data); 
-});
-
-export {};
+export { };
